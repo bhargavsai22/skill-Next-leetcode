@@ -5,12 +5,8 @@ class Solution {
         while (left < right) {
             char a = s.charAt(left);
             char b = s.charAt(right);
-
-            // Convert uppercase to lowercase
             if (a >= 'A' && a <= 'Z') a = (char)(a + 32);
             if (b >= 'A' && b <= 'Z') b = (char)(b + 32);
-
-            // Skip non-alphanumeric
             if (!((a >= 'a' && a <= 'z') || (a >= '0' && a <= '9'))) {
                 left++;
                 continue;
@@ -19,8 +15,6 @@ class Solution {
                 right--;
                 continue;
             }
-
-            // Compare
             if (a != b) return false;
 
             left++;
